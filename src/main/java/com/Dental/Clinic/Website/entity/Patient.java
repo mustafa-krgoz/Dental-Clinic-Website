@@ -34,20 +34,16 @@ public class Patient {
     @Column(name = "complaint", length = 1000)
     private String complaint;  // Hasta şikâyeti
 
-    @Column(name = "prescription")
-    private String prescription; // Reçete
-
-    @Column(name = "dose")
-    private String dose;
-
-    @Column(name = "fees")
-    private double fees;
-
     @Column(name = "urgency")
     private String urgency;  // Aciliyet durumu
 
-    public Patient(long id, String firstName, String lastName, int age, String gender, String bloodGroup, String phoneNumber, String address, String complaint, String prescription, String dose, double fees, String urgency) {
-        this.id = id;
+    // Parametresiz constructor
+    public Patient() {}
+
+    // Parametreli constructor
+    public Patient(String firstName, String lastName, int age, String gender,
+                   String bloodGroup, String phoneNumber, String address,
+                   String complaint, String urgency) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -56,16 +52,10 @@ public class Patient {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.complaint = complaint;
-        this.prescription = prescription;
-        this.dose = dose;
-        this.fees = fees;
         this.urgency = urgency;
     }
 
-    public Patient(){
-        super();
-
-    }
+    // Getter ve Setter Metodları
 
     public long getId() {
         return id;
@@ -107,14 +97,6 @@ public class Patient {
         this.gender = gender;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getBloodGroup() {
         return bloodGroup;
     }
@@ -131,12 +113,12 @@ public class Patient {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPrescription() {
-        return prescription;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPrescription(String prescription) {
-        this.prescription = prescription;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getComplaint() {
@@ -145,22 +127,6 @@ public class Patient {
 
     public void setComplaint(String complaint) {
         this.complaint = complaint;
-    }
-
-    public String getDose() {
-        return dose;
-    }
-
-    public void setDose(String dose) {
-        this.dose = dose;
-    }
-
-    public double getFees() {
-        return fees;
-    }
-
-    public void setFees(double fees) {
-        this.fees = fees;
     }
 
     public String getUrgency() {
