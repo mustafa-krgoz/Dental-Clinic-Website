@@ -9,28 +9,22 @@ public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
-    private Patient patient;  // Hastayla ilişki
+    private Patient patient;
 
-    @Column(name = "doctor_name")
     private String doctorName;
 
-    @Column(name = "appointment_date")
     private LocalDateTime appointmentDate;
 
-    @Column(name = "status")
-    private String status; // BEKLEMEDE, TAMAMLANDI, IPTAL_EDILDI vb.
+    private String status; // Örn: BEKLEMEDE, TAMAMLANDI, IPTAL_EDILDI
 
-    @Column(name = "department")
-    private String department; // Perio, Orto vb.
+    private String department; // Örn: Perio, Orto vb.
 
-    // Parametresiz constructor (gerekli)
-    public Appointment() {
-        super();
-    }
+    // Boş constructor (JPA için gerekli)
+    public Appointment() {}
 
     // Parametreli constructor
     public Appointment(Patient patient, String doctorName, LocalDateTime appointmentDate, String status, String department) {
@@ -42,12 +36,11 @@ public class Appointment {
     }
 
     // Getter ve Setter'lar
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

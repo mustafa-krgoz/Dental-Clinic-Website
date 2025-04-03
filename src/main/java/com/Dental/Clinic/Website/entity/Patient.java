@@ -8,36 +8,28 @@ public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "age")
     private int age;
 
-    @Column(name = "gender")
     private String gender;
 
-    @Column(name = "blood_group")
     private String bloodGroup;
 
-    @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "address")
     private String address;
 
-    @Column(name = "complaint", length = 1000)
-    private String complaint;  // Hasta şikâyeti
+    @Column(length = 1000)
+    private String complaint;
 
-    @Column(name = "urgency")
-    private String urgency;  // Aciliyet durumu
+    private String urgency;
 
-    // Parametresiz constructor
+    // Boş constructor (JPA için gerekli)
     public Patient() {}
 
     // Parametreli constructor
@@ -55,13 +47,12 @@ public class Patient {
         this.urgency = urgency;
     }
 
-    // Getter ve Setter Metodları
-
-    public long getId() {
+    // Getter ve Setter'lar
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
