@@ -11,7 +11,7 @@ public class Appointment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(optional = false)
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
@@ -19,9 +19,9 @@ public class Appointment {
 
     private LocalDateTime appointmentDate;
 
-    private String status; // Örn: BEKLEMEDE, TAMAMLANDI, IPTAL_EDILDI
+    private String status; // BEKLEMEDE, TAMAMLANDI, IPTAL_EDILDI
 
-    private String department; // Örn: Perio, Orto vb.
+    private String department; // Örn: Periodontoloji, Ortodonti
 
     // Boş constructor (JPA için gerekli)
     public Appointment() {}

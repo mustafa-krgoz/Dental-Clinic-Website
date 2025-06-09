@@ -14,37 +14,23 @@ public class Patient {
 
     private String lastName;
 
-    private int age;
-
-    private String gender;
-
-    private String bloodGroup;
-
     private String phoneNumber;
 
-    private String address;
+    private String email;
 
     @Column(length = 1000)
-    private String complaint;
-
-    private String urgency;
+    private String note; // Randevu ile ilgili özel not
 
     // Boş constructor (JPA için gerekli)
     public Patient() {}
 
     // Parametreli constructor
-    public Patient(String firstName, String lastName, int age, String gender,
-                   String bloodGroup, String phoneNumber, String address,
-                   String complaint, String urgency) {
+    public Patient(String firstName, String lastName, String phoneNumber, String email, String note) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = age;
-        this.gender = gender;
-        this.bloodGroup = bloodGroup;
         this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.complaint = complaint;
-        this.urgency = urgency;
+        this.email = email;
+        this.note = note;
     }
 
     // Getter ve Setter'lar
@@ -72,30 +58,6 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getBloodGroup() {
-        return bloodGroup;
-    }
-
-    public void setBloodGroup(String bloodGroup) {
-        this.bloodGroup = bloodGroup;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -104,27 +66,19 @@ public class Patient {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAddress() {
-        return address;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getComplaint() {
-        return complaint;
+    public String getNote() {
+        return note;
     }
 
-    public void setComplaint(String complaint) {
-        this.complaint = complaint;
-    }
-
-    public String getUrgency() {
-        return urgency;
-    }
-
-    public void setUrgency(String urgency) {
-        this.urgency = urgency;
+    public void setNote(String note) {
+        this.note = note;
     }
 }
